@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-32x32.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="用户故事与敏捷方法用户故事用户故事： 用户故事在软件开发过程中被作为描述需求的一种表达形式。为了规范用户故事的表达，便于沟通，用户故事通常的表达格式为：作为一个&lt;用户角色&gt;, 我想要&lt;完成活动&gt;, 以便于&lt;实现价值&gt;。 用户故事由以下三方面组成： 故事描述、故事细节、测试 在编写故事时，要利用故事灵活性优势，让它们能用于不同层次 与用户代理合作：选择合适的用户代">
+<meta property="og:type" content="article">
+<meta property="og:title" content="于潇涵的博客">
+<meta property="og:url" content="http://www.example.com/2023/08/29/%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B%E4%B8%8E%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="于潇涵的博客">
+<meta property="og:description" content="用户故事与敏捷方法用户故事用户故事： 用户故事在软件开发过程中被作为描述需求的一种表达形式。为了规范用户故事的表达，便于沟通，用户故事通常的表达格式为：作为一个&lt;用户角色&gt;, 我想要&lt;完成活动&gt;, 以便于&lt;实现价值&gt;。 用户故事由以下三方面组成： 故事描述、故事细节、测试 在编写故事时，要利用故事灵活性优势，让它们能用于不同层次 与用户代理合作：选择合适的用户代">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-29T02:33:58.689Z">
+<meta property="article:modified_time" content="2023-08-29T02:33:58.981Z">
+<meta property="article:author" content="于潇涵">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://www.example.com/2023/08/29/%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B%E4%B8%8E%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 于潇涵的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">于潇涵的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.example.com/2023/08/29/%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B%E4%B8%8E%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="于潇涵">
+      <meta itemprop="description" content="随风而动，随心而行">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="于潇涵的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-08-29 10:33:58" itemprop="dateCreated datePublished" datetime="2023-08-29T10:33:58+08:00">2023-08-29</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="用户故事与敏捷方法"><a href="#用户故事与敏捷方法" class="headerlink" title="用户故事与敏捷方法"></a>用户故事与敏捷方法</h1><h3 id="用户故事"><a href="#用户故事" class="headerlink" title="用户故事"></a>用户故事</h3><p><strong>用户故事：</strong> 用户故事在软件开发过程中被作为描述需求的一种表达形式。为了规范用户故事的表达，便于沟通，用户故事通常的表达格式为：作为一个&lt;用户角色&gt;, 我想要&lt;完成活动&gt;, 以便于&lt;实现价值&gt;。</p>
+<p><strong>用户故事由以下三方面组成：</strong> 故事描述、故事细节、测试</p>
+<p>在编写故事时，要利用故事灵活性优势，让它们能用于不同层次</p>
+<p>与用户代理合作：选择合适的用户代理对于项目的成功非常重要，他们在项目中代表着用户，以提供不同角度的建议。</p>
+<p>故事排列的优先级：采用DSDM，莫斯科原则；即以下短语缩写：必须有、应该有、可以有、这次不会有</p>
+<p><strong>用户故事不是什么：</strong> 用户故事不是用例，用例编写成客户和开发人员都能够接受的格式，这样大家都能够读懂并达成一致，用例的目的是记录客户和开发团队之间的协议；用例比用户故事完整的多，用户故事往往是暂时的，其生命周期仅存在于迭代中；用例编写成方便开发人员和客户讨论并达成共识，用户故事编写成方便计划发布，用于提醒需求细节的讨论。编写用户故事是为了便于发布计划、迭代计划，是进行分析的支持工具。</p>
+<h3 id="我们为什么选择用户故事？"><a href="#我们为什么选择用户故事？" class="headerlink" title="我们为什么选择用户故事？"></a>我们为什么选择用户故事？</h3><p><strong>1.用户故事强调口头沟通：</strong></p>
+<p>两个例子：</p>
+<p>当用户输入不正确的数据时，系统应该突出显示警告信息</p>
+<p>第一个例子中：选用应该这个词，是不是意味着我们可以忽略这个需求？每个人对突出显示的定义不同，可能有些人的突出显示在用户看来根本不突出</p>
+<p>用户可以输入一个名称，它可以是127位字符</p>
+<p>第二个例子中：意思不明确，是否要为文件夹输入一个名称？名称一定要是127位？</p>
+<p>用户故事的目的不是事无巨细的记录特性，而是作为客户和工作人员交谈时的提醒语句</p>
+<p><strong>2.人人可以理解用户故事：</strong> 用例和背景的好处是让用户和开发人员都能够理解，将他们组织成故事能够增强人们的记忆，需求通过用户故事展现和沟通。</p>
+<p><strong>3.用户故事的大小适合做计划：</strong> 与用例和场景不同，用户故事的大小可以掌控，便于发布规划。</p>
+<p><strong>4.用户故事适合于迭代开发：</strong> 其与迭代开发相辅相成；我们容易对故事本身迭代，因此用户故事适合迭代开发；用户故事中的场景要想好细节，不能在开发时逐步增加，这样没有体现出场景特点。首先想出一个史诗级计划，这是项目早期的开始，之后对这个场景增加细节，成为一打新的故事</p>
+<p><strong>5.用户故事鼓励延迟细节：</strong> 也就是由大计划大目标逐步转变成细节</p>
+<p><strong>6.用户故事支持随机应变开发：</strong></p>
+<p>1.用户的实际需求往往连他们都不清楚</p>
+<p>2.项目的开发者只有在开发过程中才能不断地完善故事中的细节</p>
+<p>3.这些细节短时间不能够让人们理解</p>
+<p>4.产品项目经常变更</p>
+<p>5.开发过程中会出现难以预见的错误</p>
+<p>所以开发过程中，随机应变的方式往往比从上到下的纵向开发效果好，能够不要求客户完全了解他们的确切需求，也让我们能够更好的消化细节，同时给了较好的容错率。细节的不断发现能够让开发团队从高低层面细节中来回切换。</p>
+<p><strong>7.用户故事鼓励参与性设计：</strong> 参与性设计中，用户可以从一开始就加入软件行为的设计；相反，经验性设计通常利用访谈和观察用户来进行设计，但是用户在软件设计中完全不参与。用户故事中没有专业性术语，易读易懂，能够激发用户参与积极性。</p>
+<p><strong>8.用户故事传播隐性知识</strong></p>
+<h3 id="用户故事的不足："><a href="#用户故事的不足：" class="headerlink" title="用户故事的不足："></a>用户故事的不足：</h3><p>1.大型项目中的用户故事错综复杂——用户故事不要过于细节化，开发时再增加细节，不太适用于特大型团队中的项目开发，要利用文档将每个人知道的都记录下来，保证信息的充分共享</p>
+<p>2.大型项目中需要额外的文档实现可追溯性我们作为开发人员，应该了解每个方法的特性，明白选择每个方法的原因；同时了解其他方法的优点和适用场景；客户则鼓励他们进行参与性设计</p>
+<h3 id="用户故事中的不良征兆："><a href="#用户故事中的不良征兆：" class="headerlink" title="用户故事中的不良征兆："></a>用户故事中的不良征兆：</h3><p>1.故事太小：尽量确保故事划分时候准确，防止迭代中错误估计完成时间。</p>
+<p>2.故事互相依赖，将他们合并</p>
+<p>3.用户需求的超额完成：可以确保开发团队中手头任务透明化，让每个人感觉到任务的压力，从而避免节外生枝对生产的影响。</p>
+<p>4.细节太多：说明过于重视文档而忽略了口头沟通</p>
+<p>5.过早考虑用户故事细节：避免写包含具体信息的故事（例如：求职者可以在工作描述页面查看公司信息——改为：在查看工作描述时也能够查看公司信息）</p>
+<p>6.想得太远：承认不能发现所有需求，要在不断发现中增加细节</p>
+<p>7.故事划分频繁：扫描剩余故事，找出真正需要划分的大故事，高优先级在先。</p>
+<p>8.用户难以确定故事的优先级：将故事变成小故事后让用户选择他要的故事</p>
+<p>9.客户不愿意写用户故事也不愿意排列优先级：让用户摆脱困境，跟用户说我也会从其他用户中收集信息，让用户觉得责任不是他自己一个人的，这样收集到数据后再自己利用。</p>
+<h3 id="Scrum敏捷开发"><a href="#Scrum敏捷开发" class="headerlink" title="Scrum敏捷开发"></a>Scrum敏捷开发</h3><ol>
+<li><p>待办事项列表<br>首先产品负责人把需要上线的产品特性写成用户故事，放入产品待办事项列表中。</p>
+</li>
+<li><p>迭代待办事项列表<br>产品负责人进行产品待办事项列表梳理活动，选出优先级较高的用户故事，放入迭代待办事项列表吗，在Sprint冲刺过程使用</p>
+</li>
+<li><p>Sprint计划会议<br>产品负责人、Scrum Master以及开发团队共同讨论用户故事的优先级，并且决定当前这个Sprint要做的内容，最终确定迭代待办事项列表（Sprint Backlog）。</p>
+</li>
+</ol>
+<p>开发团队中：产品负责人负责管理Product Backlog内容并排列优先级；ScrumMaster作为领导者而不是管理者存在，为团队服务，帮助团队在完成任务的过程中排除障碍，保证开发的顺利进行。也可以每个月按照优先级变化重新排列。</p>
+<p>Sprint计划会议结束后，整个Scrum 团队必须对每个用户故事都有准确且深刻的理解，才能执行。</p>
+<ol start="4">
+<li>Sprint（冲刺）<br>进入Sprint阶段后，每天需要召开每日Scrum站会，团队根据Sprint Backlog中的内容进行开发和测试，通过每日Scrum站会和团队成员交流做完了什么、正在做什么、有没有遇到困难。</li>
+</ol>
+<p>Sprint是指Scrum团队完成一定数量的计划用的时间。Sprint阶段最终产出的成果是一个潜在的可发布成果。</p>
+<p>在Sprint之后，最新的产品增量（一个Sprint完成的潜在可发布的产品组成部分）必须是完成的，而且达到了Scrum团队定义的完成标准，产品增量必须达到可发布的状态。</p>
+<p>Sprint开始时，只有项目成员能够提出工作，销售人员不能为了满足某个人的要求而要求实现更多功能。如果发生十分重要的事情，就要取消现在的Sprint，重新开Sprint计划会议，启动新的Sprint。</p>
+<ol start="5">
+<li><p>Sprint评审会议<br>Sprint结束后，进行Sprint评审会议，由开发团队向产品负责人进行Demo演示，通常完成1.检视交付的产品增量2.按需调整产品待办事项列表；产品负责人接受或者拒绝交付成果，根据具体情况决定是否可以对外发布，也可以决定在发布前增加新的功能。</p>
+</li>
+<li><p>Sprint回顾会议<br>Scrum团队在一起反思可以改进的地方，并且把行动的措施记录下来，在下一个Sprint实施，从而实现持续改进和提高。</p>
+</li>
+</ol>
+<p>以上是整个Scrum的流程，其实我们总结为三种角色、三种工件、五中仪式和五种价值观，下面我们分别来看一下。</p>
+<h3 id="规划发布与迭代"><a href="#规划发布与迭代" class="headerlink" title="规划发布与迭代"></a>规划发布与迭代</h3><p>迭代：一轮迭代过程指的是一种持续改进的过程，首先针对系统的一部分进行开发，之后逐步完善整个系统，不断添加细节——类比：雕刻；每个一轮迭代中的功能增量有大有小，每一个增量都完整的实现并测试通过，一轮迭代的工作往往不需要返工。</p>
+<p>一个月为周期的迭代称为Sprint，团队需要确定一个Sprint中需要完成的工作，工作内容放在一个排列好优先级的列表中，每天一个Scrum简会：回答1.你昨天做了什么 2.你今天做什么？3.遇到什么困难</p>
+<p>一个发布由一个或者多轮的迭代组成。对于规划的发布，首先要排列好优先级：充分考虑到大部分用户对特定特性的需求程度。  </p>
+<p>较短的迭代长度允许项目进行更加频繁的调整，项目进度更加透明，但是每轮迭代会有少许额外开销；长迭代更容易犯错。因此在项目开发过程中，尽量保持固定的迭代长度，也就能保证固定的节奏和开发速度。发布计划只是说明一个大致的工期，不能准确地说明交付日期。</p>
+<p>一些系统的非功能性需求往往不能够用故事形式表达，可以通过标注约束卡的方式来注意约束</p>
+<p>故事和缺陷之间：小的缺陷可能不需要花费多长时间修正，那么可以将这些缺陷合并到故事中；大的缺陷完成时间可能较长，就要像对待其他故事那样对待它。</p>
+<h3 id="用户角色"><a href="#用户角色" class="headerlink" title="用户角色"></a>用户角色</h3><p>首先定义客户，这个客户能够帮助我们定义、编写故事；然后定义角色雏形，将用户角色名字整合提炼，对最终用户角色建模，描述其多样性，同时为了方便构建用户故事，可以添加一些虚构人物</p>
+<p>计划的发布：1.确定迭代长度：根据预计交付时间确定迭代长度</p>
+<p>2.估算速率：</p>
+<p>3.给故事安排优先级：主要因素是它所能交付的商业价值，非常重要的故事有时会因为商业价值过高而变得不那么必要</p>
+<p>4.将故事分配到一轮或者多轮迭代中</p>
+<h3 id="销售人员、分析师和产品"><a href="#销售人员、分析师和产品" class="headerlink" title="销售人员、分析师和产品"></a>销售人员、分析师和产品</h3><p>对于产品研发部门，不应该过分的关注每一笔丢失的订单，那样会失去公司的战略方向。</p>
+<p>销售人员作为用户的中转站，应该充分和用户交流，获知用户想在网站上获取什么。</p>
+<p>分析师经常喜欢空想问题而不是调查，他们应该和用户进行讨论而不能只是依靠自己的观点来决定；→可以启动一个用户顾问团队，这个团队可以识别编写并且排列用户故事</p>
+<h3 id="客户和客户团队"><a href="#客户和客户团队" class="headerlink" title="客户和客户团队"></a>客户和客户团队</h3><p>什么是用户代理：产品经理和运营负责人不能够和所有的用户沟通需求，通常只能在一大批用户中选取几个代表听取意见，也就是提取所有用户的特殊需求中的公共需求并向上层层递进提交，这就是用户代理的职责。</p>
+<p>实际用户总是优于用户代理，但是实际用户不一定能够加入用户团队，因此需要多个用户代理。建立的步骤如下：</p>
+<p>1.邀请真实用户，按照软件对应的全部客户类型广撒网</p>
+<p>2.确定客户团队中的项目负责人，通常是产品经理能够协调客户团队的协作</p>
+<p>3.确定项目成功的关键因素：要将现有的相关知识技能、和经验转移到新的系统上面，可能需要在客户团队中加入培训师。</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>测试类型有很多，包括：确保所有用户交互组件如期工作的用户交互测试、确保程序好用的可用性测试、测量应用程序在各种负荷下的工作状况的性能测试、程序压力下运行的压力测试</p>
+<h3 id="计划游戏"><a href="#计划游戏" class="headerlink" title="计划游戏"></a>计划游戏</h3><p>做计划时开发人员和客户一起对未来做出预测，开发人员估算好每个故事的成本或者大小，并估算在一个项目迭代的长度中能够完成多少工作，选择的工作量不能超过估算量，之后在第一轮迭代填满工作后，由客户接着为第二轮或者后面迭代选择故事，由客户决定第几轮能够形成发布</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/08/29/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E8%A6%81%E7%B4%A0/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/08/29/%E7%95%AA%E8%8C%84%E5%B7%A5%E4%BD%9C%E6%B3%95/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B%E4%B8%8E%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">用户故事与敏捷方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B"><span class="nav-number">1.0.1.</span> <span class="nav-text">用户故事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B%EF%BC%9F"><span class="nav-number">1.0.2.</span> <span class="nav-text">我们为什么选择用户故事？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B%E7%9A%84%E4%B8%8D%E8%B6%B3%EF%BC%9A"><span class="nav-number">1.0.3.</span> <span class="nav-text">用户故事的不足：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B%E4%B8%AD%E7%9A%84%E4%B8%8D%E8%89%AF%E5%BE%81%E5%85%86%EF%BC%9A"><span class="nav-number">1.0.4.</span> <span class="nav-text">用户故事中的不良征兆：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scrum%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91"><span class="nav-number">1.0.5.</span> <span class="nav-text">Scrum敏捷开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E5%88%92%E5%8F%91%E5%B8%83%E4%B8%8E%E8%BF%AD%E4%BB%A3"><span class="nav-number">1.0.6.</span> <span class="nav-text">规划发布与迭代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E8%A7%92%E8%89%B2"><span class="nav-number">1.0.7.</span> <span class="nav-text">用户角色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%80%E5%94%AE%E4%BA%BA%E5%91%98%E3%80%81%E5%88%86%E6%9E%90%E5%B8%88%E5%92%8C%E4%BA%A7%E5%93%81"><span class="nav-number">1.0.8.</span> <span class="nav-text">销售人员、分析师和产品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E5%92%8C%E5%AE%A2%E6%88%B7%E5%9B%A2%E9%98%9F"><span class="nav-number">1.0.9.</span> <span class="nav-text">客户和客户团队</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">1.0.10.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E5%88%92%E6%B8%B8%E6%88%8F"><span class="nav-number">1.0.11.</span> <span class="nav-text">计划游戏</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="于潇涵"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">于潇涵</p>
+  <div class="site-description" itemprop="description">随风而动，随心而行</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023-07 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">于潇涵</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共27.2k字</span>
+</div>
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客数<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+$(document).ready(function() {
+
+    var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+    var countOffset = 20000;  // 初始化首次数据
+
+    function fixCount() {            
+       if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
+        {
+            $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset); 
+            clearInterval(int);
+        }                  
+        if ($("#busuanzi_container_site_pv").css("display") != "none")
+        {
+            $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffset); // 加上初始数据 
+            clearInterval(int); // 停止检测
+        }  
+    }
+       	
+});
+</script> 
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
